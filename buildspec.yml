@@ -12,7 +12,6 @@ phases:
   build:
     commands:
       - echo Nothing to do in the build phase...
-      - echo mvn install
   post_build:
     commands:
-      - rm -rf /var/www/html/index.html
+      - rm /var/www/html/index.html
