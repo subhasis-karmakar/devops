@@ -6,3 +6,13 @@ phases:
       - echo apt-get update -y
       - echo apt-get install -y apache2
       - echo apt-get install -y php7.0 php7.0-* libapache2-mod-php7.0
+ pre_build:
+    commands:
+      - echo Nothing to do in the pre_build phase...
+  build:
+    commands:
+      - echo Nothing to do in the build phase...
+      - echo mvn install
+  post_build:
+    commands:
+      - rm -rf /var/www/html/index.html
