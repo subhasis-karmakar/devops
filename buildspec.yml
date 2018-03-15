@@ -1,0 +1,8 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - echo apt-get update -y
+      - echo apt-get install -y apache2
+      - echo apt-get install -y php7.0 php7.0-* libapache2-mod-php7.0
