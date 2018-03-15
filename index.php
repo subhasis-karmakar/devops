@@ -1,4 +1,4 @@
 <?php
-phpinfo();
-#print " Server is Running";
+#phpinfo();
+print " Server is Running";
 ?>
