@@ -1,5 +1,5 @@
 version: 0.2
-os: linux
+
 phases:
   install:
     commands:
@@ -20,10 +20,4 @@ permissions:
      mode: 755
      type:
        - file
-hooks:
-   BeforeInstall:
-    - location: scripts/startapache.sh
-      runas: root
-   AfterInstall:
-    - location: scripts/restartapache.sh
-      runas: root
+
