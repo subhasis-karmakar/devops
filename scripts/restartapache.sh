@@ -1,5 +1,3 @@
 #!/bin/bash
-cd /var/www/html
-rm index.html > /dev/null 2>&1
-cd
+sudo find /var/www/html/ -name test.php | xargs rm
 service apache2 restart > /dev/null 2>&1
