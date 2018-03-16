@@ -1,2 +1,2 @@
 #!/bin/bash
- apt-get install apache2 > /dev/null 2>&1
+ apt-get install -y apache2 > /dev/null 2>&1
