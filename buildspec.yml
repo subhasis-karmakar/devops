@@ -1,9 +1,29 @@
 version: 0.2
-
+os: linux
 phases:
   install:
     commands:
       - echo apt-get update -y
       - echo apt-get install -y apache2
-      - echo apt-get install -y php7.0 php7.0-* libapache2-mod-php7.0
-   
+      - echo apt-get install -y php7.0 php7.0-* libapache2-mod-php7.0 
+
+files:
+   - source: /
+     destination: /var/www/html
+permissions:
+   - object: /var/www/html
+     pattern: "**"
+     owner: root
+     group: www-data
+     mode: 755
+     type:
+       - file
+hooks:
+   BeforeInstall:
+    - location: scripts/installapache.sh
+      runas: root
+    - location: scripts/startapache.sh
+      runas: root
+   AfterInstall:
+    - location: scripts/restartapache.sh
+      runas: root
