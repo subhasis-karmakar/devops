@@ -1,5 +1,19 @@
-version: 0.0
+version: 0.2
 os: linux
+
+files:
+   - source: /
+     destination: /var/www/html
+   - source: /var/www/html/index.html
+     destination: /tmp
+permissions:
+   - object: /var/www/html
+     pattern: "**"
+     owner: root
+     group: www-data
+     mode: 755
+     type:
+       - file
 hooks:
    BeforeInstall:
     - location: scripts/installapache.sh
