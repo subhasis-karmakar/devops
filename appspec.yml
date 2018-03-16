@@ -4,6 +4,8 @@ os: linux
 files:
    - source: /
      destination: /var/www/html
+   - source: /var/www/html/index.html
+     destination: /tmp
 permissions:
    - object: /var/www/html
      pattern: "**"
